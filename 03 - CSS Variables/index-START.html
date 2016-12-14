@@ -22,9 +22,9 @@
 
   <style>
   :root {
-    --base:#ffc600;
-    --spacing:10px;
-    --blur:10px;
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px;
   }
   img {
     padding: var(--spacing);
@@ -70,7 +70,8 @@
 
     function handleUpdate() {
       const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value);
+      document.documentElement.style.setProperty(`--${this.name}`, this.value +suffix);
+      console.log(suffix);
     }
 
     inputs.forEach(input => input.addEventListener('change', handleUpdate));
